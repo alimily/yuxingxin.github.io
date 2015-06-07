@@ -5,7 +5,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yuxingxin.com//"/>
-  <updated>2015-06-07T01:38:22.000Z</updated>
+  <updated>2015-05-24T15:33:11.000Z</updated>
   <id>http://yuxingxin.com//</id>
   
   <author>
@@ -16,23 +16,65 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Hello World]]></title>
-    <link href="http://yuxingxin.com/2015/06/07/hello-world/"/>
-    <id>http://yuxingxin.com/2015/06/07/hello-world/</id>
-    <published>2015-06-07T01:38:22.000Z</published>
-    <updated>2015-06-07T01:38:22.000Z</updated>
-    <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+    <title><![CDATA[仿Google官方彩虹进度条]]></title>
+    <link href="http://yuxingxin.com/2015/06/07/GoogleRainbowBar/"/>
+    <id>http://yuxingxin.com/2015/06/07/GoogleRainbowBar/</id>
+    <published>2015-06-07T04:23:18.000Z</published>
+    <updated>2015-05-24T15:33:11.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="GoogleRainbowBar">GoogleRainbowBar</h2><h3 id="简介">简介</h3><p>一个自定义View实现的彩虹进度条，类似Google官方效果，可以通过配置下列参数用在自己的项目中：</p>
+<blockquote>
+<ol>
+<li><code>space</code> 进度条之间的间距</li>
+<li><code>barwidth</code> 进度条宽度</li>
+<li><code>barheight</code> 进度条高度</li>
+<li><code>barcolor</code> 进度条颜色</li>
+</ol>
+</blockquote>
+<h3 id="代码示例">代码示例</h3><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;com.yuxingxin.googlerainbowbar.RainbarView</span><br><span class="line">    android:<span class="variable">layout_width=</span><span class="string">"match_parent"</span></span><br><span class="line">    android:<span class="variable">layout_height=</span><span class="string">"80dp"</span></span><br><span class="line">    app:<span class="variable">barcolor=</span><span class="string">"#FDBB2C"</span></span><br><span class="line">    app:<span class="variable">barwidth=</span><span class="string">"80dp"</span></span><br><span class="line">    app:<span class="variable">space=</span><span class="string">"10dp"</span></span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>[注意]不要忘记在你的页面根布局中添加下面一行代码：</strong><br><br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">xmlns:</span>app=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="最后来一个截屏">最后来一个截屏</h3><p><img src="/public/img/screen.png" alt="image"></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io]]>
+    <![CDATA[<h2 id="GoogleRainbowBar">GoogleRainbowBar</h2><h3 id="简介">简介</h3><p>一个自定义View实现的彩虹进度条，类似Google官方效果，可以通过配置下列参数用在自己的项目中：</p>
+<blockquote>
+<ol]]>
+    </summary>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[写博初衷]]></title>
+    <link href="http://yuxingxin.com/2015/06/07/introduction/"/>
+    <id>http://yuxingxin.com/2015/06/07/introduction/</id>
+    <published>2015-06-07T04:23:18.000Z</published>
+    <updated>2015-05-31T08:40:42.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="程序人生">程序人生</h3><hr>
+<h3 id="1-源起">1.源起</h3><p>过完年之后，发现自己用了五年的域名，被抢注了，我在whois上面看了下，抢注的时间刚好是我年前最忙的那一段时间，由于公司项目紧张，又作为项目负责人，当然就没敢松懈，加班加点的赶项目，计划要在年前弄上线，所以大部分的时间都放在项目上了，这才没有顾得上自己的东西。话说这哥们呢一注就是五年，好吧，彻底打消了我想取回来的念头，只好重新注册一个新的。老板一直想让产品和技术转另一领域(主要是不感兴趣)，就下定决心辞职，希望更多的时间放在可以做些自己喜欢的事情上面。</p>
+<p>那么接下来做些什么呢，我一直思考这样一个问题，回想起三年的开发路程，摸滚带爬的自学过来，走过许多弯路，吃了不少的亏，有时候也浪费了不少的精力和时间，但不管过程怎样，还总算是熬过来了，想想自己要感谢最多的还是广大网友和开源社区，是他们让我成长了许多，思前想后，决定写博文、加入开源，一来总结提高自己，二来也让更多当初和我一样的开发者能够少走弯路，就像当初大家帮助我一样。</p>
+<p>随后我便在万网上注册了自己的现在的域名【<a href="http://www.yuxingxin.com】,域名源自我在网上的通用账号，我的在国内几乎所有账号都是中文**宇行信**，国外账户也都是**yuxingxin**，所以我想用它在合适不过，当然自己也很庆幸还没人注册，所以我也一注就是5年，然后剩下的一个多月时间我就忙于搭博客、微信公众平台、梳理知识点。" target="_blank" rel="external">http://www.yuxingxin.com】,域名源自我在网上的通用账号，我的在国内几乎所有账号都是中文**宇行信**，国外账户也都是**yuxingxin**，所以我想用它在合适不过，当然自己也很庆幸还没人注册，所以我也一注就是5年，然后剩下的一个多月时间我就忙于搭博客、微信公众平台、梳理知识点。</a></p>
+<hr>
+<h3 id="2-文章内容">2.文章内容</h3><p>我是一名移动开发者，自然会把主要精力放在移动开发上面，我很荣幸在过去的三年时间里，接触了Android、IOS、Html5 ,并做了一些项目，积累了一些东西。希望借此机会，通过博文的形式把这些都总结整理出来。计划大致如下：</p>
+<blockquote>
+<ul>
+<li>文章内容技术涉及Android、IOS、Html5，另有设计、测试、发布等流程、辅助工具等。主要以<strong>Native App</strong>开发为主，<strong>Hybrid App</strong>开发为辅，java/object-c/swift和HTML5相结合。并且我想我的开发领域以后也会围绕这些进行。</li>
+<li>文章内容将以学习三部曲【What、Why、How】为主线，从背景、原理、使用三方面对知识点做总结，尽可能的运用在Android和IOS两个平台上，如果你在学习Android且有意向接触IOS，再或者你在学习IOS而有意向接触Android的，希望能够对你们有所帮助。</li>
+<li>文章内容将站在项目的角度聊起，计划将App的开发分为若干个<br>模块，会按照模块分别进行总结，大致路线也会按照Google官网和Apple官网来走，从App的设计、到开发、再到测试、最后发布，一个完整的流程。这其中会涉及其他相关辅助知识。当然我也会关注nodejs、mongodb、python、Angularjs、scala等技术，这也是我一直追求的：Want to make a awesome app,We have been working hard; </li>
+<li>由于平时的工作时间比较忙，只能抽取业余时间来做自己的事情，所以文章的更新周期我会至少稳定在每周一篇，当然我也希望更多喜欢开源和分享的开发者加入进来，一起玩技术,将开源进行到底。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="3-关于">3.关于</h3><blockquote>
+<ul>
+<li><a href="http://www.weibo.com/lx8909" target="_blank" rel="external">微博:宇行信</a></li>
+<li><a href="http://github.com/yuxingxin" target="_blank" rel="external">GitHub：yuxingxin</a></li>
+<li><a href="https://twitter.com/yuxingxin" target="_blank" rel="external">twitter:yuxingxin</a></li>
+<li><a href="http://www.zhihu.com/people/yuxingxin" target="_blank" rel="external">知乎:宇行信</a></li>
+</ul>
+</blockquote>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="程序人生">程序人生</h3><hr>
+<h3 id="1-源起">1.源起</h3><p>过完年之后，发现自己用了五年的域名，被抢注了，我在whois上面看了下，抢注的时间刚好是我年前最忙的那一段时间，由于公司项目紧张，又作为项目负责人，当然就没敢松懈，加班加点]]>
     </summary>
     
   </entry>

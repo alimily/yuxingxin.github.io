@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="宇信同行">
-    <title>Hello World - 宇信同行</title>
+    <title>仿Google官方彩虹进度条 - 宇信同行</title>
     <meta name="author" content="Sean Liu">
     <meta name="description" content="宇信同行">
     <link rel="icon" href="/assets/images/null">
@@ -182,10 +182,10 @@
     
         <div class="post-header main-content-wrap">
     
-        <h1 class="post-title" itemprop="headline">Hello World</h1>
+        <h1 class="post-title" itemprop="headline">仿Google官方彩虹进度条</h1>
     
     <div class="post-meta">
-    <time  itemprop="datePublished" content="Sun Jun 07 2015 09:38:22 GMT+0800">
+    <time  itemprop="datePublished" content="Sun Jun 07 2015 12:23:18 GMT+0800">
         Jun 07, 2015
     </time>
     
@@ -193,15 +193,18 @@
 </div>
     
     <div class="post-content markdown main-content-wrap" itemprop="articleBody">
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h2 id="GoogleRainbowBar">GoogleRainbowBar</h2><h3 id="简介">简介</h3><p>一个自定义View实现的彩虹进度条，类似Google官方效果，可以通过配置下列参数用在自己的项目中：</p>
+<blockquote>
+<ol>
+<li><code>space</code> 进度条之间的间距</li>
+<li><code>barwidth</code> 进度条宽度</li>
+<li><code>barheight</code> 进度条高度</li>
+<li><code>barcolor</code> 进度条颜色</li>
+</ol>
+</blockquote>
+<h3 id="代码示例">代码示例</h3><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;com.yuxingxin.googlerainbowbar.RainbarView</span><br><span class="line">    android:<span class="variable">layout_width=</span><span class="string">"match_parent"</span></span><br><span class="line">    android:<span class="variable">layout_height=</span><span class="string">"80dp"</span></span><br><span class="line">    app:<span class="variable">barcolor=</span><span class="string">"#FDBB2C"</span></span><br><span class="line">    app:<span class="variable">barwidth=</span><span class="string">"80dp"</span></span><br><span class="line">    app:<span class="variable">space=</span><span class="string">"10dp"</span></span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>[注意]不要忘记在你的页面根布局中添加下面一行代码：</strong><br><br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">xmlns:</span>app=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="最后来一个截屏">最后来一个截屏</h3><p><img src="/public/img/screen.png" alt="image"></p>
 
         
             
@@ -222,7 +225,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/07/introduction/" data-tooltip="写博初衷">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -232,17 +235,17 @@
     </nav>
     <ul class="post-actions post-action-share">
         <li class="post-action">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yuxingxin.com/2015/06/07/hello-world/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yuxingxin.com/2015/06/07/GoogleRainbowBar/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yuxingxin.com/2015/06/07/hello-world/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yuxingxin.com/2015/06/07/GoogleRainbowBar/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yuxingxin.com/2015/06/07/hello-world/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yuxingxin.com/2015/06/07/GoogleRainbowBar/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
@@ -285,7 +288,7 @@
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--disabled">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/06/07/introduction/" data-tooltip="写博初衷">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                     <i class="fa fa-angle-right"></i>
@@ -295,17 +298,17 @@
     </nav>
     <ul class="post-actions post-action-share">
         <li class="post-action">
-            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yuxingxin.com/2015/06/07/hello-world/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://yuxingxin.com/2015/06/07/GoogleRainbowBar/">
                 <i class="fa fa-google-plus"></i>
             </a>
         </li>
         <li class="post-action">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yuxingxin.com/2015/06/07/hello-world/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://yuxingxin.com/2015/06/07/GoogleRainbowBar/">
                 <i class="fa fa-facebook-official"></i>
             </a>
         </li>
         <li class="post-action">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yuxingxin.com/2015/06/07/hello-world/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://yuxingxin.com/2015/06/07/GoogleRainbowBar/">
                 <i class="fa fa-twitter"></i>
             </a>
         </li>
