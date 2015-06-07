@@ -5,7 +5,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yuxingxin.com//"/>
-  <updated>2015-05-31T08:40:42.000Z</updated>
+  <updated>2015-06-07T16:16:59.000Z</updated>
   <id>http://yuxingxin.com//</id>
   
   <author>
@@ -17,21 +17,21 @@
   
   <entry>
     <title><![CDATA[写博初衷]]></title>
-    <link href="http://yuxingxin.com/2015/06/07/introduction/"/>
-    <id>http://yuxingxin.com/2015/06/07/introduction/</id>
-    <published>2015-06-07T04:23:18.000Z</published>
-    <updated>2015-05-31T08:40:42.000Z</updated>
+    <link href="http://yuxingxin.com/2015/06/08/introduction/"/>
+    <id>http://yuxingxin.com/2015/06/08/introduction/</id>
+    <published>2015-06-07T16:16:59.000Z</published>
+    <updated>2015-06-07T16:16:59.000Z</updated>
     <content type="html"><![CDATA[<h3 id="程序人生">程序人生</h3><hr>
 <h3 id="1-源起">1.源起</h3><p>过完年之后，发现自己用了五年的域名，被抢注了，我在whois上面看了下，抢注的时间刚好是我年前最忙的那一段时间，由于公司项目紧张，又作为项目负责人，当然就没敢松懈，加班加点的赶项目，计划要在年前弄上线，所以大部分的时间都放在项目上了，这才没有顾得上自己的东西。话说这哥们呢一注就是五年，好吧，彻底打消了我想取回来的念头，只好重新注册一个新的。老板一直想让产品和技术转另一领域(主要是不感兴趣)，就下定决心辞职，希望更多的时间放在可以做些自己喜欢的事情上面。</p>
 <p>那么接下来做些什么呢，我一直思考这样一个问题，回想起三年的开发路程，摸滚带爬的自学过来，走过许多弯路，吃了不少的亏，有时候也浪费了不少的精力和时间，但不管过程怎样，还总算是熬过来了，想想自己要感谢最多的还是广大网友和开源社区，是他们让我成长了许多，思前想后，决定写博文、加入开源，一来总结提高自己，二来也让更多当初和我一样的开发者能够少走弯路，就像当初大家帮助我一样。</p>
-<p>随后我便在万网上注册了自己的现在的域名【<a href="http://www.yuxingxin.com】,域名源自我在网上的通用账号，我的在国内几乎所有账号都是中文**宇行信**，国外账户也都是**yuxingxin**，所以我想用它在合适不过，当然自己也很庆幸还没人注册，所以我也一注就是5年，然后剩下的一个多月时间我就忙于搭博客、微信公众平台、梳理知识点。" target="_blank" rel="external">http://www.yuxingxin.com】,域名源自我在网上的通用账号，我的在国内几乎所有账号都是中文**宇行信**，国外账户也都是**yuxingxin**，所以我想用它在合适不过，当然自己也很庆幸还没人注册，所以我也一注就是5年，然后剩下的一个多月时间我就忙于搭博客、微信公众平台、梳理知识点。</a></p>
+<p>随后我便在万网上注册了自己的现在的域名<strong><a href="http://www.yuxingxin.com" target="_blank" rel="external">http://www.yuxingxin.com</a></strong>,域名源自我在网上的通用账号，我的在国内几乎所有账号都是中文<strong>宇行信</strong>，国外账户也都是<strong>yuxingxin</strong>，所以我想用它在合适不过，当然自己也很庆幸还没人注册，所以我也一注就是5年，然后剩下的一个多月时间我就忙于搭博客、微信公众平台、梳理知识点。</p>
 <hr>
 <h3 id="2-文章内容">2.文章内容</h3><p>我是一名移动开发者，自然会把主要精力放在移动开发上面，我很荣幸在过去的三年时间里，接触了Android、IOS、Html5 ,并做了一些项目，积累了一些东西。希望借此机会，通过博文的形式把这些都总结整理出来。计划大致如下：</p>
 <blockquote>
 <ul>
 <li>文章内容技术涉及Android、IOS、Html5，另有设计、测试、发布等流程、辅助工具等。主要以<strong>Native App</strong>开发为主，<strong>Hybrid App</strong>开发为辅，java/object-c/swift和HTML5相结合。并且我想我的开发领域以后也会围绕这些进行。</li>
 <li>文章内容将以学习三部曲【What、Why、How】为主线，从背景、原理、使用三方面对知识点做总结，尽可能的运用在Android和IOS两个平台上，如果你在学习Android且有意向接触IOS，再或者你在学习IOS而有意向接触Android的，希望能够对你们有所帮助。</li>
-<li>文章内容将站在项目的角度聊起，计划将App的开发分为若干个<br>模块，会按照模块分别进行总结，大致路线也会按照Google官网和Apple官网来走，从App的设计、到开发、再到测试、最后发布，一个完整的流程。这其中会涉及其他相关辅助知识。当然我也会关注nodejs、mongodb、python、Angularjs、scala等技术，这也是我一直追求的：Want to make a awesome app,We have been working hard; </li>
+<li>文章内容将站在项目的角度聊起，计划将App的开发分为若干个<br>模块，会按照模块分别进行总结，大致路线也会按照Google官网和Apple官网来走，从App的设计、到开发、再到测试、最后发布，一个完整的流程。这其中会涉及其他相关辅助知识。当然我也会关注nodejs、mongodb、python、Angularjs、scala等技术，这也是我一直追求的：Want to make a awesome app,We have been working hard;</li>
 <li>由于平时的工作时间比较忙，只能抽取业余时间来做自己的事情，所以文章的更新周期我会至少稳定在每周一篇，当然我也希望更多喜欢开源和分享的开发者加入进来，一起玩技术,将开源进行到底。</li>
 </ul>
 </blockquote>
