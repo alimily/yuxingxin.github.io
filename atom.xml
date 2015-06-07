@@ -5,7 +5,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://yuxingxin.com//"/>
-  <updated>2015-06-07T16:16:59.000Z</updated>
+  <updated>2015-06-07T16:29:28.000Z</updated>
   <id>http://yuxingxin.com//</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[仿Google官方彩虹进度条]]></title>
+    <link href="http://yuxingxin.com/2015/06/08/GoogleRainbowBar/"/>
+    <id>http://yuxingxin.com/2015/06/08/GoogleRainbowBar/</id>
+    <published>2015-06-07T16:29:28.000Z</published>
+    <updated>2015-06-07T16:29:28.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="GoogleRainbowBar">GoogleRainbowBar</h2><h3 id="简介">简介</h3><p>一个自定义View实现的彩虹进度条，类似Google官方效果，可以通过配置下列参数用在自己的项目中：</p>
+<blockquote>
+<ol>
+<li><code>space</code> 进度条之间的间距</li>
+<li><code>barwidth</code> 进度条宽度</li>
+<li><code>barheight</code> 进度条高度</li>
+<li><code>barcolor</code> 进度条颜色</li>
+</ol>
+</blockquote>
+<h3 id="代码示例">代码示例</h3><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;com.yuxingxin.googlerainbowbar.RainbarView</span><br><span class="line">    android:<span class="variable">layout_width=</span><span class="string">"match_parent"</span></span><br><span class="line">    android:<span class="variable">layout_height=</span><span class="string">"80dp"</span></span><br><span class="line">    app:<span class="variable">barcolor=</span><span class="string">"#FDBB2C"</span></span><br><span class="line">    app:<span class="variable">barwidth=</span><span class="string">"80dp"</span></span><br><span class="line">    app:<span class="variable">space=</span><span class="string">"10dp"</span></span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>[注意]不要忘记在你的页面根布局中添加下面一行代码：</strong><br><br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">xmlns:</span>app=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="最后来一个截屏">最后来一个截屏</h3><p><img src="/assets/images/screen.png" alt="image"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="GoogleRainbowBar">GoogleRainbowBar</h2><h3 id="简介">简介</h3><p>一个自定义View实现的彩虹进度条，类似Google官方效果，可以通过配置下列参数用在自己的项目中：</p>
+<blockquote>
+<ol]]>
+    </summary>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[写博初衷]]></title>
@@ -48,33 +75,6 @@
     <summary type="html">
     <![CDATA[<h3 id="程序人生">程序人生</h3><hr>
 <h3 id="1-源起">1.源起</h3><p>过完年之后，发现自己用了五年的域名，被抢注了，我在whois上面看了下，抢注的时间刚好是我年前最忙的那一段时间，由于公司项目紧张，又作为项目负责人，当然就没敢松懈，加班加点]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[仿Google官方彩虹进度条]]></title>
-    <link href="http://yuxingxin.com/2015/06/07/GoogleRainbowBar/"/>
-    <id>http://yuxingxin.com/2015/06/07/GoogleRainbowBar/</id>
-    <published>2015-06-07T04:23:18.000Z</published>
-    <updated>2015-05-24T15:33:11.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="GoogleRainbowBar">GoogleRainbowBar</h2><h3 id="简介">简介</h3><p>一个自定义View实现的彩虹进度条，类似Google官方效果，可以通过配置下列参数用在自己的项目中：</p>
-<blockquote>
-<ol>
-<li><code>space</code> 进度条之间的间距</li>
-<li><code>barwidth</code> 进度条宽度</li>
-<li><code>barheight</code> 进度条高度</li>
-<li><code>barcolor</code> 进度条颜色</li>
-</ol>
-</blockquote>
-<h3 id="代码示例">代码示例</h3><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;com.yuxingxin.googlerainbowbar.RainbarView</span><br><span class="line">    android:<span class="variable">layout_width=</span><span class="string">"match_parent"</span></span><br><span class="line">    android:<span class="variable">layout_height=</span><span class="string">"80dp"</span></span><br><span class="line">    app:<span class="variable">barcolor=</span><span class="string">"#FDBB2C"</span></span><br><span class="line">    app:<span class="variable">barwidth=</span><span class="string">"80dp"</span></span><br><span class="line">    app:<span class="variable">space=</span><span class="string">"10dp"</span></span><br><span class="line">/&gt;</span><br></pre></td></tr></table></figure>
-<p><strong>[注意]不要忘记在你的页面根布局中添加下面一行代码：</strong><br><br><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="label">xmlns:</span>app=<span class="string">"http://schemas.android.com/apk/res-auto"</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="最后来一个截屏">最后来一个截屏</h3><p><img src="/public/img/screen.png" alt="image"></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="GoogleRainbowBar">GoogleRainbowBar</h2><h3 id="简介">简介</h3><p>一个自定义View实现的彩虹进度条，类似Google官方效果，可以通过配置下列参数用在自己的项目中：</p>
-<blockquote>
-<ol]]>
     </summary>
     
   </entry>
