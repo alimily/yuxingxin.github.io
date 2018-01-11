@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="宇信同行">
+    <title>关于fastlane已存在的证书复用问题 - 宇信同行</title>
+    <meta name="author" content="Sean Liu">
+    <meta name="description" content="宇信同行">
+    <link rel="icon" href="/assets/images/fav.ico">
+    
+        <link rel="alternative" type="application/atom+xml" title="RSS" href="atom.xml">
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox-thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+    <!--STYLES END-->
+    
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-77096739-2']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?fdaa18e768db90bb9e82a9db3aec9d3d";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</head>
+
+    <body>
+        <div id="blog">
+            <header id="header">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars "></i>
+    <h1 class="header-title">
+        <a class="header-title-link" href="https://yuxingxin.com">宇信同行</a>
+    </h1>
+    
+        <a class="header-picture-link" href="/#about">
+            <img class="header-picture" src="/assets/images/user.jpg"/>
+        </a>
+    
+</header>
+            <nav id="sidebar">
+    
+    <div class="sidebar-profile">
+        <a href="/#about">
+            
+            <img class="sidebar-profile-picture" src="/assets/images/user.jpg"/>
+            
+        </a>
+        <span class="sidebar-profile-name hide-md">Sean Liu</span>
+    </div>
+    
+    
+    <ul class="sidebar-buttons">
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link" href="https://yuxingxin.com/">
+                    
+                    <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+                    <span class="sidebar-button-desc hide-md">主页</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link" href="https://yuxingxin.com/all-categories">
+                    
+                    <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+                    <span class="sidebar-button-desc hide-md">分类</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link" href="https://yuxingxin.com/all-tags">
+                    
+                    <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+                    <span class="sidebar-button-desc hide-md">标签</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link" href="https://yuxingxin.com/all-archives">
+                    
+                    <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+                    <span class="sidebar-button-desc hide-md">归档</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link" href="https://yuxingxin.com/#about">
+                    
+                    <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+                    <span class="sidebar-button-desc hide-md">关于宇行信</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+    <ul class="sidebar-buttons">
+        
+        <li class="sidebar-button">
+            
+            <a  class="sidebar-button-link" href="http://weibo.com/lx8909" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-weibo"></i>
+                    <span class="sidebar-button-desc hide-md">weibo</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+            <a  class="sidebar-button-link" href="https://github.com/yuxingxin" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+                    <span class="sidebar-button-desc hide-md">GitHub</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+            <a  class="sidebar-button-link" href="http://stackoverflow.com/users/4866682/yuxingxin" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-stack-overflow"></i>
+                    <span class="sidebar-button-desc hide-md">Stack Overflow</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+            <a  class="sidebar-button-link" href="https://twitter.com/yuxingxin" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-twitter"></i>
+                    <span class="sidebar-button-desc hide-md">Twitter</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+            <a  class="sidebar-button-link" href="https://www.facebook.com/profile.php?id=100004716995168" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-facebook"></i>
+                    <span class="sidebar-button-desc hide-md">Facebook</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+            <a  class="sidebar-button-link" href="https://plus.google.com/u/0/110644828953450971561/posts" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-google-plus"></i>
+                    <span class="sidebar-button-desc hide-md">Google +</span>
+                </a>
+        </li>
+        
+        <li class="sidebar-button">
+            
+            <a  class="sidebar-button-link" href="mailto:lx8909@gmail.com" target="_blank">
+                
+                    <i class="sidebar-button-icon fa fa-lg fa-envelope-o"></i>
+                    <span class="sidebar-button-desc hide-md">Mail</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+    <ul class="sidebar-buttons">
+        
+        <li class="sidebar-button">
+            
+                <a  class="sidebar-button-link" href="https://yuxingxin.com/atom.xml">
+                    
+                    <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+                    <span class="sidebar-button-desc hide-md">RSS</span>
+                </a>
+        </li>
+        
+    </ul>
+    
+</nav>
+            <div id="main">
+                
+<style type="text/css">
+
+.-hoofoo-share-buttons {
+  display: inline-block;
+}
+.-hoofoo-share-title {
+  font-size: 1.1em;
+  font-weight: 200;
+}
+.-hoofoo-share-ui-button {
+  cursor: pointer;
+  background-color: #555;
+  color: #fff;
+  font-size: 24px;
+  line-height: 40px;
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  border-radius: 25px;
+  float: left;
+  transition: background 0.4s;
+  -moz-transition: background 0.4s; /* Firefox 4 */
+  -webkit-transition: background 0.4s; /* Safari å’Œ Chrome */
+  -o-transition: background 0.4s;
+  text-align: center;
+}
+.-hoofoo-share-weibo:hover {
+  background-color: #cf3f41;
+}
+.-hoofoo-share-weixin:hover {
+  background-color: #18a01a;
+}
+.-hoofoo-share-qq:hover {
+  background-color: #5593d9;
+}
+.-hoofoo-share-twitter:hover {
+  background-color: #2ab3e6;
+}
+.-hoofoo-share-more:hover {
+  background-color: #777;
+}
+.-mob-share-weixin-qrcode-content {
+  border-radius: 4px;
+  -webkit-box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  -o-box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+.-mob-share-weixin-qrcode {
+  margin: 5% !important;
+  width: 90% !important;
+  height: auto !important;
+}
+.-mob-share-weixin-qrcode-close {
+  background-image: url("/assets/images/fancybox_sprite.png") !important;
+}
+.-mob-share-weixin-qrcode-close {
+  overflow: hidden;
+  line-height: 100px !important;
+  position: absolute !important;
+  top: -18px !important;
+  right: -18px !important;
+  width: 36px !important;
+  height: 36px !important;
+  cursor: pointer !important;
+  z-index: 8040 !important;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  .-mob-share-weixin-qrcode-close {
+    background-image: url("/assets/images/fancybox_sprite@2x.png") !important;
+    background-size: 44px 152px !important; /*The size of the normal image, half the size of the hi-res image*/
+  }
+}
+.-mob-share-close {
+  height: 4em !important;
+  font-size: 0.8em !important;
+  line-height: 4em !important;
+  background: #555 !important;
+  color: #fff !important;
+}
+</style>
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+        <div class="post-header main-content-wrap">
+    
+        <h1 class="post-title" itemprop="headline">关于fastlane已存在的证书复用问题</h1>
+    
+    <div class="post-meta">
+    <time  itemprop="datePublished" content="Wed Jan 10 2018 00:00:00 GMT+0800">
+        Jan 10, 2018
+    </time>
+    
+        <span>in </span>
+        
+    <a class="category-link" href="/categories/iOS/">iOS</a>
+
+
+    
+</div>
+</div>
+    
+    <div class="post-content markdown main-content-wrap" itemprop="articleBody">
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>iOS开发在团队项目协作中，面临着许许多的挑战，除了被大家诟病的nib文件和故事板以外，还有就是今天要说的证书管理问题，相信做过iOS开发的用户对fastlane已经不陌生了，它提供了很多有用的功能来帮助开发者从繁琐的重复性劳动中解脱出来，这里列举出一些：<br><img src="https://ws3.sinaimg.cn/large/006tNc79ly1fnbcmq6spkj30to0sbtag.jpg" alt=""></p>
+<ul>
+<li>deliver: 上传截图, 元数据, app应用程序到App Store</li>
+<li>supply: 上传Android app应用程序和元数据到Google Play</li>
+<li>snapshot: 自动捕获iOS app应用程序本地截图</li>
+<li>screengrab: 自动捕获Android app应用程序本地截图</li>
+<li>frameit: 快速截屏并将截屏放入设备中</li>
+<li>pem: 自动生成和更新推送通知配置文件</li>
+<li>sigh: 开发证书和描述文件下载</li>
+<li>produce: 使用命令行在iTunes Connect上创建新的app和开发入口</li>
+<li>cert: 自动创建和配置iOS代码签名证书</li>
+<li>spaceship: Ruby 库访问 Apple开发者中心和 iTunes Connect</li>
+<li>pilot: 最好的方式管理你的TestFlight 测试人员和从终端构建</li>
+<li>boarding: 最简单的方式邀请你的TestFlight beta测试人员</li>
+<li>gym: iOS app打包签名自动化工具</li>
+<li>match: 使用Git同步你的团队证书和配置文件</li>
+<li>scan: 最简单方式测试你的 iOS 和 Mac apps</li>
+</ul>
+<p>今天说的其实是match，我们知道，苹果公司在个人开发者账号上面对于证书的生成是有严格的数量限制的，<code>development</code> 和 <code>distribution</code>证书类型只能生成2个，所以如果按照fastlane每次build不同的target或者不同的Bundle ID的话，它都会重新去生成一个新的证书并以此生成对应的描述文件，这样以来，我们也只能最多同时用该开发者账号签名两个App安装在真机上，想用第三个就必须revoke掉以前生成的证书，当然了，一旦把证书revoke掉了，这也就意味着我们用该证书签名的App也不能在真机上面使用了。所以就得考虑一下，该如果复用现有证书。</p>
+<h4 id="1-拿到你想要复用证书的ID"><a href="#1-拿到你想要复用证书的ID" class="headerlink" title="1. 拿到你想要复用证书的ID"></a>1. 拿到你想要复用证书的ID</h4><p>关于这个证书ID，从钥匙串和openssl工具库中没有找到方法来取到，但是可以通过spaceship这个库来实现，下面是相关脚本：<br><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">require</span> <span class="string">'spaceship'</span></span><br><span class="line">Spaceship.login(<span class="string">'your@apple.id'</span>)</span><br><span class="line">Spaceship.select_team</span><br><span class="line">Spaceship.certificate.all.each <span class="keyword">do</span> <span class="params">|cert|</span> </span><br><span class="line">  cert_type = Spaceship::Portal::Certificate::CERTIFICATE_TYPE_IDS[cert.type_display_id].to_s.split(<span class="string">"::"</span>)[-<span class="number">1</span>]</span><br><span class="line">  puts <span class="string">"Cert id: <span class="subst">#&#123;cert.id&#125;</span>, name: <span class="subst">#&#123;cert.name&#125;</span>, expires: <span class="subst">#&#123;cert.expires.strftime(<span class="string">"%Y-%m-%d"</span>)&#125;</span>, type: <span class="subst">#&#123;cert_type&#125;</span>"</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></p>
+<p>执行上面代码，会输出所有证书的相应信息，你可以从中找到你想复用的那个证书的ID。</p>
+<h4 id="2-创建远程仓库来保存证书。"><a href="#2-创建远程仓库来保存证书。" class="headerlink" title="2. 创建远程仓库来保存证书。"></a>2. 创建远程仓库来保存证书。</h4><p>建立一个远程仓库，并在该目录下创建<code>certs/distribution</code>和 <code>certs/development</code>目录，分别存放生产和开发环境下的相关证书文件。</p>
+<h4 id="3-通过钥匙串导出你想要复用的那个证书"><a href="#3-通过钥匙串导出你想要复用的那个证书" class="headerlink" title="3. 通过钥匙串导出你想要复用的那个证书"></a>3. 通过钥匙串导出你想要复用的那个证书</h4><p>导出对应的cer文件和p12文件。</p>
+<h4 id="4-执行下面命令，导出私钥文件"><a href="#4-执行下面命令，导出私钥文件" class="headerlink" title="4. 执行下面命令，导出私钥文件"></a>4. 执行下面命令，导出私钥文件</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">openssl pkcs12 -nocerts -nodes -out key<span class="selector-class">.pem</span> -<span class="keyword">in</span> certificate.p12</span><br></pre></td></tr></table></figure>
+<h4 id="5-生成最后需要的证书"><a href="#5-生成最后需要的证书" class="headerlink" title="5. 生成最后需要的证书"></a>5. 生成最后需要的证书</h4><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">openssl aes-<span class="number">256</span>-cbc -k &lt;your_password&gt; -<span class="keyword">in</span> key<span class="selector-class">.pem</span> -out &lt;cert_id&gt;<span class="selector-class">.p12</span> -a</span><br><span class="line">openssl aes-<span class="number">256</span>-cbc -k &lt;your_password&gt; -<span class="keyword">in</span> certificate<span class="selector-class">.cer</span> -out &lt;cert_id&gt;<span class="selector-class">.cer</span> -a</span><br></pre></td></tr></table></figure>
+<p>这里的cert_id是上面我们保存的证书id，其中执行完上述步骤后，就生成了fastlane match想要的证书，当执行fastlane match development/adhoc/appstore命令后，match就不会在Apple Development Center重新生成证书了，而是用现有的。<br>将证书分别放到对应的git仓库目录中，提交并推送到远程仓库。</p>
+<h4 id="6-在开发者网站上面生成App-ID"><a href="#6-在开发者网站上面生成App-ID" class="headerlink" title="6. 在开发者网站上面生成App ID"></a>6. 在开发者网站上面生成App ID</h4><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastlane produce -u &lt;your@apple.<span class="built_in">id</span>&gt; -a &lt;your_app_bundle_id&gt; <span class="comment">--skip_itc</span></span><br></pre></td></tr></table></figure>
+<p>如果你的App需要在ITC（iTunes Connect）中创建，则移除<code>--skip_itc</code>选项。</p>
+<h4 id="7-生成证书对应的描述文件"><a href="#7-生成证书对应的描述文件" class="headerlink" title="7. 生成证书对应的描述文件"></a>7. 生成证书对应的描述文件</h4><figure class="highlight fsharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fastlane <span class="keyword">match</span> &lt;<span class="class"><span class="keyword">type</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其中type有四种：development/adhoc/distribution/appstore</p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://macoscope.com/blog/simplify-your-life-with-fastlane-match/" target="_blank" rel="external">Simplify your life with fastlane match</a></p>
+
+        
+            
+        
+        <!--MOB SHARE BEGIN-->
+        <!-- <div class="-mob-share-ui-button -mob-share-open">分享</div>
+        <div class="-mob-share-ui" style="display: none">
+            <ul class="-mob-share-list">
+                <li class="-mob-share-weibo"><p>新浪微博</p></li>
+                <li class="-mob-share-qzone"><p>QQ空间</p></li>
+                <li class="-mob-share-qq"><p>QQ好友</p></li>
+                <li class="-mob-share-douban"><p>豆瓣</p></li>
+                <li class="-mob-share-facebook"><p>Facebook</p></li>
+                <li class="-mob-share-twitter"><p>Twitter</p></li>
+            </ul>
+            <div class="-mob-share-close">取消</div>
+        </div>
+        <div class="-mob-share-ui-bg"></div> -->
+
+        <div class="-hoofoo-share-title">分享到：</div>
+        <div class="-hoofoo-share-buttons">
+            <div class="-mob-share-weibo -hoofoo-share-weibo -hoofoo-share-ui-button"><i class="fa fa-weibo" aria-hidden="true"></i></div>
+            <div class="-mob-share-weixin -hoofoo-share-weixin -hoofoo-share-ui-button"><i class="fa fa-weixin" aria-hidden="true"></i></div>
+            <div class="-mob-share-qq -hoofoo-share-qq -hoofoo-share-ui-button"><i class="fa fa-qq" aria-hidden="true"></i></div>
+            <div class="-mob-share-twitter -hoofoo-share-twitter -hoofoo-share-ui-button"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+            <div class="-hoofoo-share-more -hoofoo-share-ui-button -mob-share-open"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></div>
+        </div>
+        <div class="-mob-share-ui -mob-share-ui-theme" style="display: none; left: 0px; top: 0px;">
+            <ul class="-mob-share-list">
+                <li class="-mob-share-weibo" style="margin: 0px; top: 482px; left: 354px; position: absolute;" data-mob-share-center-top="482px" data-mob-share-center-left="354px"><p>新浪微博</p></li>
+                <li class="-mob-share-weixin" style="margin: 0px; top: 482px; left: 354px; position: absolute;" data-mob-share-center-top="482px" data-mob-share-center-left="354px"><p>微信</p></li>
+                <li class="-mob-share-qzone" style="margin: 0px; top: 482px; left: 354px; position: absolute;" data-mob-share-center-top="482px" data-mob-share-center-left="354px"><p>QQ空间</p></li>
+                <li class="-mob-share-qq" style="margin: 0px; top: 482px; left: 354px; position: absolute;" data-mob-share-center-top="482px" data-mob-share-center-left="354px"><p>QQ好友</p></li>
+                
+                <li class="-mob-share-douban" style="margin: 0px; top: 482px; left: 354px; position: absolute;" data-mob-share-center-top="482px" data-mob-share-center-left="354px"><p>豆瓣</p></li>
+                <li class="-mob-share-youdao" style="margin: 0px; top: 482px; left: 354px; position: absolute;" data-mob-share-center-top="482px" data-mob-share-center-left="354px"><p>有道云笔记</p></li>
+                
+                <li class="-mob-share-facebook" style="margin: 0px; top: 482px; left: 354px; position: absolute;" data-mob-share-center-top="482px" data-mob-share-center-left="354px"><p>Facebook</p></li>
+                <li class="-mob-share-twitter" style="margin: 0px; top: 482px; left: 354px; position: absolute;" data-mob-share-center-top="482px" data-mob-share-center-left="354px"><p>Twitter</p></li>
+                <li class="-mob-share-pocket" style="margin: 0px; top: 482px; left: 354px; position: absolute;" data-mob-share-center-top="482px" data-mob-share-center-left="354px"><p>Pocket</p></li>
+                <li class="-mob-share-google" style="margin: 0px; top: 482px; left: 354px; position: absolute;" data-mob-share-center-top="482px" data-mob-share-center-left="354px"><p>Google+</p></li>
+                <li class="-mob-share-tumblr" style="margin: 0px; top: 482px; left: 354px; position: absolute;" data-mob-share-center-top="482px" data-mob-share-center-left="354px"><p>Tumblr</p></li>
+                <li class="-mob-share-instapaper" style="margin: 0px; top: 482px; left: 354px; position: absolute;" data-mob-share-center-top="482px" data-mob-share-center-left="354px"><p>Instapaper</p></li>
+                <li class="-mob-share-linkedin" style="margin: 0px; top: 482px; left: 354px; position: absolute;" data-mob-share-center-top="482px" data-mob-share-center-left="354px"><p>Linkedin</p></li>
+            </ul>
+            <div class="-mob-share-close">取消</div>
+        </div>
+        <div class="-mob-share-ui-bg"></div>
+        <script id="-mob-share" src="https://f1.webshare.mob.com/code/mob-share.js?appkey=23a3d44c6690c"></script>
+<!--MOB SHARE END-->
+            
+        <div style="background-color: #2E7D32;height: 3px;margin-bottom: 15px;margin-top: 15px;" ></div>
+        <span>移动开发者/技术爱好者/喜欢开源与分享，你也可以关注微信公众号MobDevGroup，移动开发在线分享：<a href="http://mobdevgroup.com">MobDevGroup</a></span>
+    </div>
+    <div class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/fastlane/">fastlane</a>
+
+            </div>
+        
+        <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/03/Migrate-Android-Studio-3-guide/" data-tooltip="Android Studio 和Gradle Plugin 3.0 迁移不完全指南">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+        
+    </div>
+</article>
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2018 Sean Liu. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div class="post-bottom-bar">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--disabled">
+                
+                    <i class="fa fa-angle-left"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/03/Migrate-Android-Studio-3-guide/" data-tooltip="Android Studio 和Gradle Plugin 3.0 迁移不完全指南">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+                </div>
+            
+        </div>
+        <div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/user.jpg"/>
+        
+            <h4 id="about-card-name">Sean Liu</h4>
+        
+            <h5 id="about-card-bio">Just Keep Sharing 移动开发在线分享：http://mobdevgroup.com</h5>
+        
+        
+            <h5 id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                Mobile Developer
+            </h5>
+        
+        
+            <h5 id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Xi&#39;an, Shaanxi, China
+            </h5>
+        
+    </div>
+</div>
+        <div id="cover" style="background-color:#2196f3"></div>
+
+    </body>
+    <!--SCRIPTS-->
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/jquery.fancybox.js"></script>
+<script src="/assets/js/jquery.fancybox-thumbs.js"></script>
+<script src="/assets/js/tranquilpeak.js"></script>
+<!--SCRIPTS END-->
+
+
+</html>
