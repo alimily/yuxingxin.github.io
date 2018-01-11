@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="generator" content="宇信同行">
-    <title>Android开发者与设计师协作之最佳实践 - 宇信同行</title>
+    <title>Ruby相关环境配置 - 宇信同行</title>
     <meta name="author" content="Sean Liu">
     <meta name="description" content="宇信同行">
     <link rel="icon" href="/assets/images/fav.ico">
@@ -285,16 +285,16 @@ var _hmt = _hmt || [];
     
         <div class="post-header main-content-wrap">
     
-        <h1 class="post-title" itemprop="headline">Android开发者与设计师协作之最佳实践</h1>
+        <h1 class="post-title" itemprop="headline">Ruby相关环境配置</h1>
     
     <div class="post-meta">
-    <time  itemprop="datePublished" content="Wed Nov 11 2015 00:00:00 GMT+0800">
-        Nov 11, 2015
+    <time  itemprop="datePublished" content="Fri Dec 29 2017 00:00:00 GMT+0800">
+        Dec 29, 2017
     </time>
     
         <span>in </span>
         
-    <a class="category-link" href="/categories/Android设计/">Android设计</a>
+    <a class="category-link" href="/categories/Ruby/">Ruby</a>
 
 
     
@@ -302,67 +302,25 @@ var _hmt = _hmt || [];
 </div>
     
     <div class="post-content markdown main-content-wrap" itemprop="articleBody">
-        <h3 id="1-先介绍概念"><a href="#1-先介绍概念" class="headerlink" title="1.先介绍概念"></a>1.先介绍概念</h3><ul>
-<li>px</li>
-</ul>
-<p>英文单词pixel的缩写，意为像素，屏幕上的点，我们通常所说的分辨率如720X1280就是指的像素，代表宽度有720个像素点，高度有1280个像素点。我们在网页设计中经常会出现这个单位。</p>
-<ul>
-<li>in</li>
-</ul>
-<p>表示英寸，是屏幕的物理尺寸，每英寸等于2.54厘米，通常我们所有的手机4.0寸、5.5寸都是指的这个单位，但是有一点需要说明的是，这里的尺寸指的是手机的对角线长度，如果手机的屏幕是4英寸，表示手机的屏幕（可视区域）对角线长度是4 X 2.54 = 10.16厘米。</p>
-<ul>
-<li>dpi/ppi</li>
-</ul>
-<p>Dots(pixel) Per Inch的缩写, 表示每英寸点数，即每英寸包含像素个数。比如320X480分辨率的手机，宽2英寸，高3英寸, 每英寸包含的像素点的数量为320/2=160dpi（横向）或480/3=160dpi（纵向），160就是这部手机的dpi，横向和纵向的这个值都是相同的，原因是大部分手机屏幕使用正方形的像素点。</p>
-<ul>
-<li>dpi/dp</li>
-</ul>
-<p>device independent pixels的缩写，表示设备独立像素，Android中独有的单位，在屏幕密度为160的屏幕上，1dp=1px;换句话说：1 dp ≈ 1 / 160 inch</p>
-<ul>
-<li>density</li>
-</ul>
-<p>表示上面提到屏幕密度，density = dpi/160。</p>
-<ul>
-<li>pt</li>
-</ul>
-<p>point的缩写，同样和px常用作是网页中字体的单位，在印刷行业中常用，等于1/72英寸。至于两者的区别：px是一个点，它不是自然界的长度单位，谁能说出一个“点”有多长多大么？可以画的很小，也可以很大。如果点很小，那画面就清晰，我们称它为“分辨率高”，反之，就是“分辨率低”。所以，“点”的大小是会“变”的，也称为“相对长度”。而point确切的说法是一个专用的印刷单位“磅”，大小为1/72英寸。所以它是一个自然界标准的长度单位，也称为“绝对长度”。所以也可以理解为pixel是相对大小，而point是绝对大小。两者的转换关系可以用一个公式表示：pt=px乘以3/4，大概接近1倍的关系。</p>
-<ul>
-<li>em</li>
-</ul>
-<p>即％，在CSS中，1em＝100％，是一个比率，结合CSS继承关系使用，具有灵活性。和px的转换关系为：em=16乘以px。</p>
-<ul>
-<li>sp</li>
-</ul>
-<p>Scale-independent Pixels的缩写，和dp很像，但它可以根据用户的字体偏好设置来缩放，因此，在Android开发中官方推荐我们在给字体设置大小的时候都是用sp。</p>
-<h3 id="2-Android资源目录"><a href="#2-Android资源目录" class="headerlink" title="2.Android资源目录"></a>2.Android资源目录</h3><p>我们都知道Android工程的资源目录res有以下几个文件夹：</p>
-<ul>
-<li>mipmap-mdpi  dpi=160  density=1     HVGA(320x480)</li>
-<li>mipmap-hdpi  dpi=240  density=1.5   WVGA(480X800)    FWVGA(480X854)</li>
-<li>mipmap-xhdpi dpi=320  density=2     720p(720X1280)</li>
-<li>mipmap-xhhdpi dpi=480  density=3    HD(1080X1920)</li>
-<li>mipmap-xhhhdpi dpi=640  density=4   </li>
-</ul>
-<p>PS：</p>
-<ul>
-<li>VGA是”Video Graphics Array”，显示标准为640*480。</li>
-<li>WVGA(Wide VGA)分辨率为480*800</li>
-<li>FWVGA(Full Wide VGA)分辨率为480*854</li>
-<li>HVGA(Half VGA)即VGA的一半分辨率为320*480；</li>
-<li>QVGA(Quarter VGA)即VGA非四分之一分辨率为240*320</li>
-<li>SVGA(Super VGA)即分辨率为600*800</li>
-<li>HD(High Definition)分辨率为1080X1920,也就是我们平时说的1080p高清,720p为标清</li>
-</ul>
-<p>现在很多人员不足的公司都不会给Android和iOS平台都分别出一套效果图，大部分设计人员都是出一套来共用。</p>
-<h3 id="3-最佳实践"><a href="#3-最佳实践" class="headerlink" title="3.最佳实践"></a>3.最佳实践</h3><ol>
-<li><p>如果是Android和iOS公用一套的话，我们知道iPhone5的尺寸为4.0，分辨率为640X1164，然后根据上面的概念我们知道他的dpi大概约为332，比较接近Android的Xhdpi也即320的分辨率，所以我们完全可以按照这个dpi为320公用一套。所以我们可以在设计效果图的时候选定720X1280的分辨率来进行设计。</p>
-</li>
-<li><p>做设计的可能心里都有个约定俗成的规范就是尽可能的让尺寸定义为偶数，当然也可能是这么做为了好居中，Android在设计规范中也给出了几个规范，比如上面菜单栏高度（96px）、边距（16px）、图标宽高（64px）等，字体呢也都建议使用24pt，28pt，36pt 和44pt这几种。</p>
-</li>
-<li><p>设计完成后，设计师可以把设计的尺寸都除以2来交给开发者，然后开发者就可以用dp为单位来设置尺寸，同样的，所有字体的pt值除以2作为sp数值交给开发者，然后将图标切成上面的几种（这步可以借助一些插件来完成），同样交给开发者对应放在上面的几个文件夹中。</p>
-</li>
-</ol>
-<h3 id="4-说明"><a href="#4-说明" class="headerlink" title="4.说明"></a>4.说明</h3><p>我们知道英寸是物理界的长度单位，我们最后如果都转换为它的话，那么我们所给出的尺寸就都固定了，根据上面我们知道1 dp ≈ 1 / 160 inch，很明显根据这个转换关系我们就可以把单位统一了，比方说我们知道Android中定义边距为8dp，那么它大概有8/160 inch这么宽，虽然在不同分辨率的手机上对应的像素不同，但是这个过程不需要我们关心，这是由系统自动完成的，它知道我这1dp在什么手机对应多少像素，sp也是这个道理，这样就会产生一个现象就是，在不同的手机上显示的内容多少不同，事实上也就是这样，有的手机显示8行就到底了，有的手机可以显示10行还有空白。</p>
-
+        <p>最近在使用fastlane来实现项目的自动化，发现这套工具是用Ruby这门语言写的，为了了解Ruby的一些环境配置，这里做个笔记，来记录关于Ruby遇到的一些问题。</p>
+<h4 id="一些基本概念"><a href="#一些基本概念" class="headerlink" title="一些基本概念"></a>一些基本概念</h4><h5 id="1-RVM"><a href="#1-RVM" class="headerlink" title="1. RVM"></a>1. RVM</h5><p><a href="https://rvm.io/" target="_blank" rel="external">RVM</a> ，顾名思义，Ruby Version Manager，用于管理Ruby环境，通常在多个项目中，不同的工程用的Ruby版本不一样，这时候我们就需要一个工具来帮助我们管理这些版本，另外还有一些依赖的三方插件都由它来管理</p>
+<h5 id="2-Rails"><a href="#2-Rails" class="headerlink" title="2. Rails"></a>2. Rails</h5><p><a href="http://rubyonrails.org/" target="_blank" rel="external">Rails</a> ，顾名思义，Ruby on Rails，是一个使用Ruby语言写的开源Web应用框架，它是严格按照MVC结构开发的。它努力使自身保持简单，来使实际的应用开发时的代码更少，使用最少的配置。</p>
+<h5 id="3-RubyGems"><a href="#3-RubyGems" class="headerlink" title="3. RubyGems"></a>3. RubyGems</h5><p>RubyGems是一个方便而强大的Ruby程序包管理器（ package manager），类似于RedHat的RPM.它将一个Ruby应用程序打包到一个gem里，作为一个安装单元。最新版本的Ruby已经包含它了。</p>
+<h5 id="4-Gem"><a href="#4-Gem" class="headerlink" title="4. Gem"></a>4. Gem</h5><p>Gem是封装起来的Ruby应用程序或代码库，在终端使用的gem命令，是指通过RubyGems管理Gem包。</p>
+<h5 id="5-Gemfile"><a href="#5-Gemfile" class="headerlink" title="5. Gemfile"></a>5. Gemfile</h5><p>一个定义你的项目都依赖哪些第三方库的文件，bundle会根据这个文件的配置去找这些依赖包。</p>
+<h5 id="6-Rake"><a href="#6-Rake" class="headerlink" title="6. Rake"></a>6. Rake</h5><p><a href="https://ruby.github.io/rake/" target="_blank" rel="external">Rake</a>是一门构建语言，和make类似。Rake是用Ruby写的，它支持自己的DSL用来处理和维护Ruby程序。 Rails就是用rake扩展来完成多种不容任务，如数据库初始化、更新等。</p>
+<h5 id="7-Rakefile"><a href="#7-Rakefile" class="headerlink" title="7. Rakefile"></a>7. Rakefile</h5><p>Rakefile是由Ruby编写，Rake的命令执行就是由Rakefile文件定义。</p>
+<h5 id="8-Bundler"><a href="#8-Bundler" class="headerlink" title="8. Bundler"></a>8. Bundler</h5><p><a href="http://bundler.io/" target="_blank" rel="external">Bundler</a>相当于多个RubyGems批处理运行，在配置文件Gemfile里指定你的应用依赖哪些第三方包，它会自动帮你下载安装这些包，并且会下载这些包依赖的包。</p>
+<h4 id="Ruby版本管理"><a href="#Ruby版本管理" class="headerlink" title="Ruby版本管理"></a>Ruby版本管理</h4><h5 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h5><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span> gpg --keyserver hkp:<span class="comment">//keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB</span></span><br><span class="line"><span class="symbol">$</span> \curl -sSL https:<span class="comment">//get.rvm.io | bash -s stable</span></span><br></pre></td></tr></table></figure>
+<p>由于国内Ruby服务器访问速度太慢，建议使用Ruby China的<a href="https://gems.ruby-china.org/" target="_blank" rel="external">镜像服务器</a>,这样就可以提高依赖包的下载速度。<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ gem sources --<span class="built_in">add</span> http<span class="variable">s:</span>//gems.<span class="keyword">ruby</span>-china.org/ --<span class="built_in">remove</span> http<span class="variable">s:</span>//rubygems.org/</span><br><span class="line">$ gem sources -<span class="keyword">l</span></span><br><span class="line">http<span class="variable">s:</span>//gems.<span class="keyword">ruby</span>-china.org</span><br><span class="line"># 确保只有 gems.<span class="keyword">ruby</span>-china.org</span><br></pre></td></tr></table></figure></p>
+<p>如果你使用 Gemfile 和 Bundler (例如：Rails 项目)<br>你可以用 Bundler 的 Gem 源代码镜像命令:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ bundle config mirror<span class="selector-class">.https</span>:<span class="comment">//rubygems.org https://gems.ruby-china.org</span></span><br></pre></td></tr></table></figure></p>
+<p>这样你不用改你的 Gemfile 的 source:<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">source</span> <span class="string">'https://rubygems.org/'</span></span><br><span class="line">gem <span class="string">'rails'</span>, <span class="string">'4.2.5'</span></span><br><span class="line"><span class="keyword">...</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="2-列出已知的-Ruby-版本"><a href="#2-列出已知的-Ruby-版本" class="headerlink" title="2. 列出已知的 Ruby 版本"></a>2. 列出已知的 Ruby 版本</h5><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm <span class="built_in">list</span> known</span><br></pre></td></tr></table></figure>
+<h5 id="3-安装一个-Ruby-版本"><a href="#3-安装一个-Ruby-版本" class="headerlink" title="3. 安装一个 Ruby 版本"></a>3. 安装一个 Ruby 版本</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm <span class="keyword">install</span> &lt;ruby-<span class="keyword">version</span>&gt;</span><br></pre></td></tr></table></figure>
+<h5 id="4-切换-Ruby-版本"><a href="#4-切换-Ruby-版本" class="headerlink" title="4. 切换 Ruby 版本"></a>4. 切换 Ruby 版本</h5><figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm <span class="meta"><span class="meta-keyword">use</span> &lt;ruby-version&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="5-设为默认版本"><a href="#5-设为默认版本" class="headerlink" title="5. 设为默认版本"></a>5. 设为默认版本</h5><p>如果想设置为默认版本，这样一来以后新打开的控制台默认的 Ruby 就是这个版本<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm <span class="keyword">use</span> &lt;ruby-<span class="keyword">version</span>&gt; <span class="comment">--default</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="6-查询已经安装的Ruby"><a href="#6-查询已经安装的Ruby" class="headerlink" title="6. 查询已经安装的Ruby"></a>6. 查询已经安装的Ruby</h5><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm <span class="built_in">list</span></span><br></pre></td></tr></table></figure>
+<h5 id="7-卸载一个已安装版本"><a href="#7-卸载一个已安装版本" class="headerlink" title="7. 卸载一个已安装版本"></a>7. 卸载一个已安装版本</h5><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rvm <span class="builtin-name">remove</span> &lt;ruby-version&gt;</span><br></pre></td></tr></table></figure>
         
             
         
@@ -407,7 +365,7 @@ var _hmt = _hmt || [];
             <div class="post-footer-tags">
                 <span class="text-color-light text-small">TAGGED IN</span><br/>
                 
-    <a class="tag tag--primary tag--small t-link" href="/tags/coordinate/">coordinate</a>
+    <a class="tag tag--primary tag--small t-link" href="/tags/RVM/">RVM</a>
 
             </div>
         
@@ -416,7 +374,7 @@ var _hmt = _hmt || [];
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/19/AndroidBookNotes/"  data-tooltip="App研发录读后总结">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/01/10/FastlaneReuseCerts/"  data-tooltip="关于fastlane已存在的证书复用问题">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -424,7 +382,7 @@ var _hmt = _hmt || [];
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/05/DrawablePadding/" data-tooltip="Android技巧之drawablePadding的那些事">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/03/Migrate-Android-Studio-3-guide/" data-tooltip="Android Studio 和Gradle Plugin 3.0 迁移不完全指南">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>
@@ -453,7 +411,7 @@ var _hmt = _hmt || [];
         <ul class="post-actions post-action-nav">
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/19/AndroidBookNotes/"  data-tooltip="App研发录读后总结">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2018/01/10/FastlaneReuseCerts/"  data-tooltip="关于fastlane已存在的证书复用问题">
                 
                     <i class="fa fa-angle-left"></i>
                     <span class="hide-xs hide-sm text-small icon-ml">上一篇</span>
@@ -461,7 +419,7 @@ var _hmt = _hmt || [];
             </li>
             <li class="post-action">
                 
-                    <a class="post-action-btn btn btn--default tooltip--top" href="/2015/11/05/DrawablePadding/" data-tooltip="Android技巧之drawablePadding的那些事">
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/11/03/Migrate-Android-Studio-3-guide/" data-tooltip="Android Studio 和Gradle Plugin 3.0 迁移不完全指南">
                 
                     <span class="hide-xs hide-sm text-small icon-mr">下一篇</span>
                     <i class="fa fa-angle-right"></i>

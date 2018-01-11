@@ -438,7 +438,7 @@ var _hmt = _hmt || [];
 <li>该自定义类必须实现可copyWithZone:方法，该方法最好能返回对象的不可变副本。<br>NSMutableDictionary除了以上NSDictionary所有的方法外，还可以动态添加删除key-value对</li>
 </ol>
 <h4 id="Object-c：谓词"><a href="#Object-c：谓词" class="headerlink" title="Object-c：谓词"></a>Object-c：谓词</h4><p>该类主要用于指定过滤器的条件，该对象可以准确的描述所需条件，对每个对象通过谓词进行筛选，判断是否与条件相匹配。<br>步骤如下：</p>
-<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span>创建<span class="built_in">NSPredicate</span>（相当于创建一个过滤条件）  </div><div class="line"><span class="built_in">NSPredicate</span> *predicate = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"过滤条件"</span>];  </div><div class="line"><span class="number">2.</span>判断指定的对象是否满足<span class="built_in">NSPredicate</span>创建的过滤条件  </div><div class="line">[predicate evaluateWithObject:person];  </div><div class="line"><span class="number">3.</span>过滤出符合条件的对象（返回所有符合条件的对象）  </div><div class="line"><span class="built_in">NSArray</span> *persons = [array filteredArrayUsingPredicate:predicate];</div></pre></td></tr></table></figure>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>创建<span class="built_in">NSPredicate</span>（相当于创建一个过滤条件）  </span><br><span class="line"><span class="built_in">NSPredicate</span> *predicate = [<span class="built_in">NSPredicate</span> predicateWithFormat:<span class="string">@"过滤条件"</span>];  </span><br><span class="line"><span class="number">2.</span>判断指定的对象是否满足<span class="built_in">NSPredicate</span>创建的过滤条件  </span><br><span class="line">[predicate evaluateWithObject:person];  </span><br><span class="line"><span class="number">3.</span>过滤出符合条件的对象（返回所有符合条件的对象）  </span><br><span class="line"><span class="built_in">NSArray</span> *persons = [array filteredArrayUsingPredicate:predicate];</span><br></pre></td></tr></table></figure>
 <p>下面是常用的NSPredicate条件：</p>
 <ol>
 <li>逻辑运算符号 &gt; , &lt; , = , &gt;= , &lt;= 等</li>
@@ -454,20 +454,6 @@ var _hmt = _hmt || [];
             
         
         <!--MOB SHARE BEGIN-->
-        <!-- <div class="-mob-share-ui-button -mob-share-open">分享</div>
-        <div class="-mob-share-ui" style="display: none">
-            <ul class="-mob-share-list">
-                <li class="-mob-share-weibo"><p>新浪微博</p></li>
-                <li class="-mob-share-qzone"><p>QQ空间</p></li>
-                <li class="-mob-share-qq"><p>QQ好友</p></li>
-                <li class="-mob-share-douban"><p>豆瓣</p></li>
-                <li class="-mob-share-facebook"><p>Facebook</p></li>
-                <li class="-mob-share-twitter"><p>Twitter</p></li>
-            </ul>
-            <div class="-mob-share-close">取消</div>
-        </div>
-        <div class="-mob-share-ui-bg"></div> -->
-
         <div class="-hoofoo-share-title">分享到：</div>
         <div class="-hoofoo-share-buttons">
             <div class="-mob-share-weibo -hoofoo-share-weibo -hoofoo-share-ui-button"><i class="fa fa-weibo" aria-hidden="true"></i></div>
